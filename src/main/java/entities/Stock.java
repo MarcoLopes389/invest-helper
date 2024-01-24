@@ -13,6 +13,9 @@ public class Stock {
     String name;
 
     @Column
+    String symbol;
+
+    @Column
     Double pl;
 
     @Column
@@ -27,9 +30,12 @@ public class Stock {
     @Column
     Double dividendYeld;
 
-    public Stock(String id, String name, Double pl, Double roe, Double roic, Double roa, Double dividendYeld) {
+    public Stock() {}
+
+    public Stock(String id, String name, String symbol, Double pl, Double roe, Double roic, Double roa, Double dividendYeld) {
         this.id = id;
         this.name = name;
+        this.symbol = symbol;
         this.pl = pl;
         this.roe = roe;
         this.roa = roa;

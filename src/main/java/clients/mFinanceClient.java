@@ -1,5 +1,6 @@
 package clients;
 
+import dtos.mFinanceStockDetailsResponseDto;
 import dtos.mFinanceStockDto;
 import dtos.nFinanceStocksResponseDto;
 
@@ -33,6 +34,18 @@ public class mFinanceClient {
         try {
             HttpResponse<String> response = this.httpClient.send(request, HttpResponse.BodyHandlers.ofString());
             var result = mFinanceStockDto.fromJson(response.body());
+
+            return result;
+        } catch (IOException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public mFinanceStockDetailsResponseDto findAllDetails() {
+        HttpRequest request = HttpRequest.newBuilder(URI.create("https://mfinance.com.br/api/v1/stocks/indicators")).build();
+        try {
+            HttpResponse<String> response = this.httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+            var result = mFinanceStockDetailsResponseDto.fromJson(response.body());
 
             return result;
         } catch (IOException | InterruptedException e) {

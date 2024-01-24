@@ -1,10 +1,15 @@
-import clients.mFinanceClient;
+import repositories.StockRepository;
+import utils.JpaUtil;
+import javax.swing.*;
+
 public class Main {
     public static void main(String[] args) {
-        var client = new mFinanceClient();
-        var stocks = client.findAllStocks();
-//        System.out.println(stocks.getStocks());
-        var prio = client.findOne("PRIO3");
-        System.out.println(prio.getHigh());
+
+        var jpaUtil = new JpaUtil();
+        var repository = new StockRepository(jpaUtil.getEntityManagerFactory());
+        var frame = new JFrame();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
     }
 }
