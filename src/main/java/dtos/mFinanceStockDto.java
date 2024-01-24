@@ -2,7 +2,6 @@ package dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import entities.Stock;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;

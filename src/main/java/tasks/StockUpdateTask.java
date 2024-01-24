@@ -2,8 +2,7 @@ package tasks;
 
 import clients.mFinanceClient;
 import dtos.mFinanceStockDetailsDto;
-import dtos.mFinanceStockDetailsResponseDto;
-import entities.Stock;
+import entities.StockEntity;
 import repositories.StockRepository;
 
 import java.util.TimerTask;
@@ -24,7 +23,7 @@ public class StockUpdateTask extends TimerTask {
         for (mFinanceStockDetailsDto stock : stocks.getIndicators()) {
             var exists = stockRepository.findBySymbol(stock.getSymbol());
             if (exists == null) {
-                var entity = new Stock(
+                var entity = new StockEntity(
                         null,
                         null,
                         stock.getSymbol(),

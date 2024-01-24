@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "stock")
-public class Stock {
+public class StockEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     String id;
@@ -30,9 +30,9 @@ public class Stock {
     @Column
     Double dividendYeld;
 
-    public Stock() {}
+    public StockEntity() {}
 
-    public Stock(String id, String name, String symbol, Double pl, Double roe, Double roic, Double roa, Double dividendYeld) {
+    public StockEntity(String id, String name, String symbol, Double pl, Double roe, Double roic, Double roa, Double dividendYeld) {
         this.id = id;
         this.name = name;
         this.symbol = symbol;

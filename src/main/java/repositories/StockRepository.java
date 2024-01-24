@@ -1,6 +1,6 @@
 package repositories;
 
-import entities.Stock;
+import entities.StockEntity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 
@@ -17,14 +17,14 @@ public class StockRepository {
         return factory.createEntityManager();
     }
 
-    public List<Stock> findAll() {
+    public List<StockEntity> findAll() {
         var entityManager = this.getEntityManager();
-        var result = entityManager.createQuery("from Stock", Stock.class).getResultList();
+        var result = entityManager.createQuery("from Stock", StockEntity.class).getResultList();
         entityManager.close();
         return result;
     }
 
-    public void create(Stock stock) {
+    public void create(StockEntity stock) {
         var entityManager = this.getEntityManager();
         entityManager.getTransaction().begin();
         entityManager.persist(stock);
@@ -32,9 +32,9 @@ public class StockRepository {
         entityManager.close();
     }
 
-    public Stock findBySymbol(String symbol) {
+    public StockEntity findBySymbol(String symbol) {
         var entityManager = this.getEntityManager();
-        var result = entityManager.createQuery("from Stock where symbol = ?1", Stock.class)
+        var result = entityManager.createQuery("from Stock where symbol = ?1", StockEntity.class)
                 .setParameter(1, symbol)
                 .getResultList()
                 .stream()
