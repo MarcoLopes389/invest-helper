@@ -1,4 +1,4 @@
-package dtos;
+package modules.mfinance.dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.ObjectMapper;

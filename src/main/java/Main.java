@@ -1,12 +1,12 @@
 import gui.WindowService;
-import repositories.StockRepository;
-import utils.JpaUtil;
+import core.repositories.StockRepository;
+import core.utils.JpaUtil;
 
 public class Main {
     public static void main(String[] args) {
 
         var jpaUtil = new JpaUtil();
         var repository = new StockRepository(jpaUtil.getEntityManagerFactory());
-        new WindowService().createWindow();
+        new WindowService(repository).createWindow();
     }
 }

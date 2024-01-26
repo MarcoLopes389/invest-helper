@@ -1,15 +1,14 @@
-package clients;
+package modules.mfinance.clients;
 
-import dtos.mFinanceStockDetailsResponseDto;
-import dtos.mFinanceStockDto;
-import dtos.nFinanceStocksResponseDto;
+import modules.mfinance.dtos.mFinanceStockDetailsResponseDto;
+import modules.mfinance.dtos.mFinanceStockDto;
+import modules.mfinance.dtos.nFinanceStocksResponseDto;
 
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.List;
 
 public class mFinanceClient {
     private HttpClient httpClient;

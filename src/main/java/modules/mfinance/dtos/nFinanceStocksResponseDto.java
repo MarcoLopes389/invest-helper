@@ -1,11 +1,10 @@
-package dtos;
+package modules.mfinance.dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.Collections;
 import java.util.List;
 
 public class nFinanceStocksResponseDto {

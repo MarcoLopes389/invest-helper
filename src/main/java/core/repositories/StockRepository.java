@@ -1,6 +1,6 @@
-package repositories;
+package core.repositories;
 
-import entities.StockEntity;
+import core.entities.StockEntity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 
