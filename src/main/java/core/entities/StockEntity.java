@@ -16,6 +16,9 @@ public class StockEntity {
     String symbol;
 
     @Column
+    Double price;
+
+    @Column
     Double lpa;
 
     @Column
@@ -45,6 +48,12 @@ public class StockEntity {
     @Column
     Double dividendYeld;
 
+    @Column
+    Double pvp;
+
+    @Column
+    Double cagr;
+
     public StockEntity() {}
 
     public StockEntity(String id, String name, String symbol, Double pl, Double roe, Double roic, Double roa, Double dividendYeld) {
@@ -56,6 +65,30 @@ public class StockEntity {
         this.roa = roa;
         this.dividendYeld = dividendYeld;
         this.roic = roic;
+    }
+
+    public Double getPvp() {
+        return pvp;
+    }
+
+    public void setPvp(Double pvp) {
+        this.pvp = pvp;
+    }
+
+    public Double getCagr() {
+        return cagr;
+    }
+
+    public void setCagr(Double cagr) {
+        this.cagr = cagr;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 
     public String getName() {

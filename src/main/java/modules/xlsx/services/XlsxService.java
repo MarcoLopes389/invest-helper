@@ -69,6 +69,33 @@ public class XlsxService {
                         if (indexes.getLpaIndex() == index) {
                             stock.setLpa(cell.getNumericCellValue());
                         }
+                        if (indexes.getTickerIndex() == index) {
+                            stock.setSymbol(cell.getStringCellValue());
+                        }
+                        if (indexes.getDyIndex() == index) {
+                            stock.setDividendYeld(cell.getNumericCellValue());
+                        }
+                        if (indexes.getPlIndex() == index) {
+                            stock.setPl(cell.getNumericCellValue());
+                        }
+                        if (indexes.getEvEbitdaIndex() == index) {
+                            stock.setEvEbitda(cell.getNumericCellValue());
+                        }
+                        if (indexes.getPriceIndex() == index) {
+                            stock.setPrice(cell.getNumericCellValue());
+                        }
+                        if (indexes.getRoaIndex() == index) {
+                            stock.setRoa(cell.getNumericCellValue());
+                        }
+                        if (indexes.getPvpIndex() == index) {
+                            stock.setPvp(cell.getNumericCellValue());
+                        }
+                        if (indexes.getVpaIndex() == index) {
+                            stock.setVpa(cell.getNumericCellValue());
+                        }
+                        if (indexes.getPriceIndex() == index) {
+                            stock.setPrice(cell.getNumericCellValue());
+                        }
                     }
                 }
                 isFirstRow = false;

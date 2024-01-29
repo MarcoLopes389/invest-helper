@@ -62,6 +62,7 @@ public class WindowService {
 
         importButton.addActionListener((event) -> {
             var stocks = XlsxService.readFile(filepath.getText());
+            System.out.println(stocks);
         });
 
         subPanel.add(filepath);
